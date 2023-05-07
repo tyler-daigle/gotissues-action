@@ -1,0 +1,6 @@
+name: "Got Issues Action"
+description: "Add an issue to the gotissues website."
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
