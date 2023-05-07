@@ -14,6 +14,8 @@ const data = {
 const payload = JSON.stringify(data);
 
 const httpClient = new http.HttpClient();
+console.log("Here it isasdfgasdfoiasdjfasdf!!!!!!");
+console.log(payload);
 
 httpClient.postJson(SERVER).then((response) => {
     console.log(response.statusCode);
