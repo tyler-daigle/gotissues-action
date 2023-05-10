@@ -1,25 +1,16 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const http = require("@actions/http-client");
-const PORT = 3000;
-const ENDPOINT = "add-issue";
-const SERVER = `http://159.89.228.48:${PORT}/${ENDPOINT}`;
+// const http = require("@actions/http-client");
+
+const repoName = core.getInput('repo_name');
+const repoOwner = core.getInput('repo_owner');
+const issueCreator = core.getInput('issue_creator');
+const issue = core.getInput('issue');
+
 
 core.debug.enable = true;
 
-const data = {
-  name: "Spudge", 
-  issue: "I'm having a problem with my computer.",
-  id: "as245asdf1"
-};
-
-// const payload = JSON.stringify(data);
-
-core.debug(JSON.stringify(data));
-const httpClient = new http.HttpClient();
-
-httpClient.postJson(SERVER, data).then((response) => {
-    console.log(response.statusCode);
-}).catch((error) => {
-  console.log(error.message);
-});
+core.debug(`repoName: ${repoName}`);
+core.debug(`repoOwner: ${repoOwner}`);
+core.debug(`issueCreator: ${issueCreator}`);
+core.debug(`issue: ${issue.title}`);
