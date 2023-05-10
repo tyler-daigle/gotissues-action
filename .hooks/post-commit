@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Get the latest commit hash
+commit=$(git rev-parse HEAD)
+
+# Delete the existing tag (if any)
+git tag -d latest
+
+# Create a new tag and point it to the latest commit
+git tag -a latest -m "Latest commit" $commit
